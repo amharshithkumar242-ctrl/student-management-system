@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            margin:0;
+            padding:20px;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        .summary{
+            background:white;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:8px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-container{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            width:250px;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .card a{
+            text-decoration:none;
+            background:#007bff;
+            color:white;
+            padding:10px 15px;
+            border-radius:5px;
+            display:inline-block;
+            margin-top:10px;
+        }
+
+        .card a:hover{
+            background:#0056b3;
+        }
+
+        .logout{
+            background:red !important;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>IKF Student Management System</h1>
+
+<h3>
+Welcome,
+<%= username %>
+</h3>
+
+<div class="summary">
+
+    <h2>System Summary</h2>
+
+    <p>
+        Total Departments:
+        <strong><%= totalDepartments %></strong>
+    </p>
+
+    <p>
+        Total Students:
+        <strong><%= totalStudents %></strong>
+    </p>
+
+    <p>
+        Active Students:
+        <strong><%= activeStudents %></strong>
+    </p>
+
+    <p>
+        Inactive Students:
+        <strong><%= inactiveStudents %></strong>
+    </p>
+
+</div>
+
+<h2>Modules</h2>
+
+<div class="card-container">
+
+    <div class="card">
+
+        <h3>Department Management</h3>
+
+        <p>
+            Create, Edit and Delete Departments
+        </p>
+
+        <a href="/departments">
+            Open Module
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Student Management</h3>
+
+        <p>
+            Manage Student Records
+        </p>
+
+        <a href="/students">
+            Open Module
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Attendance Tracking</h3>
+
+        <p>
+            Daily Attendance Management
+        </p>
+
+        <a href="/attendance">
+            Open Module
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Leave Management</h3>
+
+        <p>
+            Student Leave Applications
+        </p>
+
+        <a href="/leave">
+            Open Module
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Logout</h3>
+
+        <p>
+            Sign out from the application
+        </p>
+
+        <a
+            href="/logout"
+            class="logout">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

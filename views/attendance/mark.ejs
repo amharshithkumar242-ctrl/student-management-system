@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+</head>
+<body>
+
+<h1>Mark Attendance</h1>
+
+<a href="/attendance">
+    Back To Attendance
+</a>
+
+<hr>
+
+<form method="POST" action="/attendance/mark">
+
+    <label>Student</label>
+
+    <br><br>
+
+    <select name="student_id">
+
+        <% students.forEach(student => { %>
+
+        <option value="<%= student.student_id %>">
+
+            <%= student.student_code %>
+
+            -
+
+            <%= student.first_name %>
+
+            <%= student.last_name %>
+
+        </option>
+
+        <% }); %>
+
+    </select>
+
+    <br><br>
+
+    <label>Status</label>
+
+    <br><br>
+
+    <select name="status">
+
+        <option value="Present">
+            Present
+        </option>
+
+        <option value="Absent">
+            Absent
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Save Attendance
+    </button>
+
+</form>
+
+</body>
+</html>

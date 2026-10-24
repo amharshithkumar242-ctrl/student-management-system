@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h1>Student Management</h1>
+
+    <hr>
+
+    <a href="/dashboard">
+        Dashboard
+    </a>
+
+    |
+
+    <a href="/departments">
+        Department Management
+    </a>
+
+    |
+
+    <a href="/students/search">
+        Search Students
+    </a>
+
+    |
+
+    <a href="/logout">
+        Logout
+    </a>
+
+    <hr>
+
+    <a href="/students/add">
+        Add Student
+    </a>
+
+    <br><br>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+
+            <th>ID</th>
+            <th>Student Code</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Batch Year</th>
+            <th>Current Year</th>
+            <th>Status</th>
+            <th>Actions</th>
+
+        </tr>
+
+        <% students.forEach(student => { %>
+
+        <tr>
+
+            <td>
+                <%= student.student_id %>
+            </td>
+
+            <td>
+                <%= student.student_code %>
+            </td>
+
+            <td>
+                <%= student.first_name %>
+                <%= student.last_name %>
+            </td>
+
+            <td>
+                <%= student.department_name %>
+            </td>
+
+            <td>
+                <%= student.batch_year %>
+            </td>
+
+            <td>
+                <%= student.current_year %>
+            </td>
+
+            <td>
+                <%= student.status %>
+            </td>
+
+            <td>
+
+                <a href="/students/edit/<%= student.student_id %>">
+                    Edit
+                </a>
+
+                &nbsp;
+
+                <form
+                    action="/students/toggle-status/<%= student.student_id %>"
+                    method="POST"
+                    style="display:inline">
+
+                    <button type="submit">
+
+                        <%= student.status === 'Active'
+                        ? 'Deactivate'
+                        : 'Activate' %>
+
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+</head>
+<body>
+
+<h1>Attendance Records</h1>
+
+<a href="/dashboard">Dashboard</a>
+
+|
+
+<a href="/attendance/mark">
+    Mark Attendance
+</a>
+
+|
+
+<a href="/attendance/report">
+    Attendance Report
+</a>
+
+<hr>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Date</th>
+    <th>Student</th>
+    <th>Status</th>
+</tr>
+
+<% attendance.forEach(row => { %>
+
+<tr>
+
+    <td>
+        <%= row.attendance_date %>
+    </td>
+
+    <td>
+        <%= row.student_code %>
+        -
+        <%= row.first_name %>
+        <%= row.last_name %>
+    </td>
+
+    <td>
+        <%= row.status %>
+    </td>
+
+</tr>
+
+<% }); %>
+
+</table>
+
+</body>
+</html>

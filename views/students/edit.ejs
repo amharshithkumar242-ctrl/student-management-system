@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Student</title>
+</head>
+<body>
+
+<h1>Edit Student</h1>
+
+<form
+action="/students/edit/<%= student.student_id %>"
+method="POST">
+
+<input
+type="text"
+name="first_name"
+value="<%= student.first_name %>"
+required>
+
+<br><br>
+
+<input
+type="text"
+name="last_name"
+value="<%= student.last_name %>"
+required>
+
+<br><br>
+
+<input
+type="email"
+name="email"
+value="<%= student.email %>">
+
+<br><br>
+
+<input
+type="text"
+name="phone"
+value="<%= student.phone %>">
+
+<br><br>
+
+<select name="department_id">
+
+<% departments.forEach(dep => { %>
+
+<option
+value="<%= dep.department_id %>"
+<%= dep.department_id === student.department_id ? 'selected' : '' %>>
+
+<%= dep.department_name %>
+
+</option>
+
+<% }); %>
+
+</select>
+
+<br><br>
+
+<input
+type="number"
+name="batch_year"
+value="<%= student.batch_year %>">
+
+<br><br>
+
+<select name="current_year">
+
+<option
+value="1st Year"
+<%= student.current_year === '1st Year' ? 'selected' : '' %>>
+1st Year
+</option>
+
+<option
+value="2nd Year"
+<%= student.current_year === '2nd Year' ? 'selected' : '' %>>
+2nd Year
+</option>
+
+<option
+value="3rd Year"
+<%= student.current_year === '3rd Year' ? 'selected' : '' %>>
+3rd Year
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Update Student
+</button>
+
+</form>
+
+</body>
+</html>

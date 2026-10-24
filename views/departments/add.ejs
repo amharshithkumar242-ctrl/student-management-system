@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Department</title>
+</head>
+<body>
+
+<h1>Add Department</h1>
+
+<form action="/departments/add" method="POST">
+
+    <label>Department Name</label>
+    <br>
+
+    <input
+        type="text"
+        name="department_name"
+        required
+    >
+
+    <br><br>
+
+    <label>Description</label>
+    <br>
+
+    <input
+        type="text"
+        name="description"
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Save Department
+    </button>
+
+</form>
+
+<br>
+
+<a href="/departments">
+    Back to Departments
+</a>
+
+</body>
+</html>

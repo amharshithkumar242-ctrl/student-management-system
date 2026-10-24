@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Students</title>
+</head>
+<body>
+
+<h1>Search Students</h1>
+
+<form method="GET">
+
+<input
+type="text"
+name="student_code"
+placeholder="Student Code">
+
+<select name="department_id">
+
+<option value="">
+All Departments
+</option>
+
+<% departments.forEach(dep => { %>
+
+<option value="<%= dep.department_id %>">
+<%= dep.department_name %>
+</option>
+
+<% }) %>
+
+</select>
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+<hr>
+
+<table border="1">
+
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Department</th>
+<th>Status</th>
+</tr>
+
+<% students.forEach(student => { %>
+
+<tr>
+
+<td>
+<%= student.student_code %>
+</td>
+
+<td>
+<%= student.first_name %>
+<%= student.last_name %>
+</td>
+
+<td>
+<%= student.department_name %>
+</td>
+
+<td>
+<%= student.status %>
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

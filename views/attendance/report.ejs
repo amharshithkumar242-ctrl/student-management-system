@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+</head>
+<body>
+
+<h1>Attendance Report</h1>
+
+<a href="/attendance">
+    Back To Attendance
+</a>
+
+<hr>
+
+<table border="1" cellpadding="10">
+
+<tr>
+
+    <th>Student Code</th>
+    <th>Name</th>
+    <th>Present Days</th>
+    <th>Absent Days</th>
+
+</tr>
+
+<% report.forEach(student => { %>
+
+<tr>
+
+    <td>
+        <%= student.student_code %>
+    </td>
+
+    <td>
+        <%= student.first_name %>
+        <%= student.last_name %>
+    </td>
+
+    <td>
+        <%= student.present_count || 0 %>
+    </td>
+
+    <td>
+        <%= student.absent_count || 0 %>
+    </td>
+
+</tr>
+
+<% }); %>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Student</title>
+</head>
+<body>
+
+<h1>Add Student</h1>
+
+<form action="/students/add"
+method="POST">
+
+<label>Student Code</label>
+<br>
+
+<input
+type="text"
+name="student_code"
+required>
+
+<br><br>
+
+<label>First Name</label>
+<br>
+
+<input
+type="text"
+name="first_name"
+required>
+
+<br><br>
+
+<label>Last Name</label>
+<br>
+
+<input
+type="text"
+name="last_name"
+required>
+
+<br><br>
+
+<label>Email</label>
+<br>
+
+<input
+type="email"
+name="email">
+
+<br><br>
+
+<label>Phone</label>
+<br>
+
+<input
+type="text"
+name="phone">
+
+<br><br>
+
+<label>Department</label>
+<br>
+
+<select
+name="department_id">
+
+<%
+departments.forEach(dep => {
+%>
+
+<option
+value="<%= dep.department_id %>">
+
+<%= dep.department_name %>
+
+</option>
+
+<%
+});
+%>
+
+</select>
+
+<br><br>
+
+<label>Batch Year</label>
+
+<br>
+
+<input
+type="number"
+name="batch_year"
+required>
+
+<br><br>
+
+<label>Current Year</label>
+
+<br>
+
+<select
+name="current_year">
+
+<option>
+1st Year
+</option>
+
+<option>
+2nd Year
+</option>
+
+<option>
+3rd Year
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Save Student
+</button>
+
+</form>
+
+</body>
+</html>

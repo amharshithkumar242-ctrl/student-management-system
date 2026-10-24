@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leave Applications</title>
+</head>
+<body>
+
+<h1>Leave Applications</h1>
+
+<a href="/leave/apply">
+Apply Leave
+</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+
+<th>Student</th>
+<th>From</th>
+<th>To</th>
+<th>Days</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+<% applications.forEach(app => { %>
+
+<tr>
+
+<td>
+
+<%= app.student_code %>
+
+-
+
+<%= app.first_name %>
+
+</td>
+
+<td>
+<%= app.from_date %>
+</td>
+
+<td>
+<%= app.to_date %>
+</td>
+
+<td>
+<%= app.leave_days %>
+</td>
+
+<td>
+<%= app.status %>
+</td>
+
+<td>
+
+<form
+action="/leave/approve/<%= app.leave_id %>"
+method="POST"
+style="display:inline;">
+
+<button>
+Approve
+</button>
+
+</form>
+
+<form
+action="/leave/reject/<%= app.leave_id %>"
+method="POST"
+style="display:inline;">
+
+<button>
+Reject
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }); %>
+
+</table>
+
+</body>
+</html>

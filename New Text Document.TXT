@@ -1,0 +1,13 @@
+mkdir config
+mkdir controllers
+mkdir middleware
+mkdir models
+mkdir public
+mkdir public\css
+mkdir public\js
+mkdir routes
+mkdir views
+mkdir views\departments
+mkdir views\students
+mkdir views\attendance
+mkdir views\leave

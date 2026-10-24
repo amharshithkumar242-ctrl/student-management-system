@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apply Leave</title>
+</head>
+<body>
+
+<h1>Apply Leave</h1>
+
+<form action="/leave/apply" method="POST">
+
+<select name="student_id">
+
+<% students.forEach(student => { %>
+
+<option value="<%= student.student_id %>">
+
+<%= student.student_code %>
+
+-
+
+<%= student.first_name %>
+
+<%= student.last_name %>
+
+</option>
+
+<% }); %>
+
+</select>
+
+<br><br>
+
+<input
+type="date"
+name="from_date"
+required>
+
+<br><br>
+
+<input
+type="date"
+name="to_date"
+required>
+
+<br><br>
+
+<textarea
+name="reason"
+placeholder="Reason">
+</textarea>
+
+<br><br>
+
+<button type="submit">
+Apply Leave
+</button>
+
+</form>
+
+</body>
+</html>
